@@ -1,0 +1,53 @@
+Gestion de un grupo de tiendas.
+
+--> CLIENTES:
+		Funcionamiento:
+		Realizan pedidos en la tienda cuando esta abierta cada cierto tiempo aleatorio.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> EMPLEADOS:
+
+	Tipos:
+	1. EmpCogePedidos: toma pedidios de clientes y cobrarles cuando este ha sido dispensado.
+	2. EmpElaboraProductos: preparan productos que necesitan una preparacion previa.
+	3. EmpPreparaPedidos: toman los pedidos de los cientes y cuando estan listos los entregan en un dispensador.
+	4. EmpEncargado: supervisa el funcionamiento.
+	
+	Funcionamiento:
+	0. Empleado: realiza su vida normal y cuando le toca acude a la tienda a trabajar.
+	1. EmpCogePedidos: recoge pedido - comprueba si hay existencias - si hay pedidos especiales avisa a EmpElaboraProductos -
+							avisa a EmpPreparaPedido para que prepare el pedido - lo coge del dispensador cuando esta listo 
+	2. EmpElaboraProductos: a la espera de elaborar un producto especial - coge los productos del almacen - 
+								lo deja preparado para EmpPreparaPedidos en una zona intermedia 
+	3. EmpPreparaPedidos: toma los productos no especiales del almacen y espera a EmpElaboraProductos si hay alguno elaborando producto espacial - 
+							cuando el pedido esta listo lo entrega en un dispensador, si no hay espera - si lo entrega avisa a EmpCogePedidos para que lo entregue
+	4. EmpEncargado: abre y cierra el almacen por la manyana y por la noche - revisa dispensadores y la cola de clientes
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> TIENDA:
+		Abierta 14 horas al dia, los empleados trabajan en turnos de 7 horas.
+		
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+--> CONSIDERACIONES:
+		Cambios en el funcionamiento deben ser especificados en la memoria
+		Uso del API Java para la gestion del proyecto
+		Numero de empleados gestionable facilmente
+		Cuando el encargado informa de un fin de jornada puede usar interrupciones
+		El numero de pedido es un contador que se reinicia al iniciar el programa
+		Velocidad de gestion y llegada de los pedidos definido por una variable
+		Ajustar el tiempo para simular 24 horas en unos segundos
+		Notificar todo por pantalla
+		--
+		Cada PRODUCTO tiene un id unico y un precio
+		Hay 20 productos en total, IDs del 0 al 9
+		15 unidades de cada producto en el almacen
+		Maximo de 5 productos en 1 pedido
+		Los productos especiales estan compuestos por 2 cifras. Por ejemplo producto 23 formado por el producto numero 2 y numero 3
+		Los clientes tienen 300 euros para gastar, si no pueden pagar se anula el pedido
+		Si no quedan existencias en el almacen, el pedido se anula
+		
+		
+---------------------------------------------------------------------------------------------------------------------------------------------------		
